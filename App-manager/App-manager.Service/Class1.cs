@@ -8,5 +8,6 @@ namespace App_manager.Service
 {
     public class Class1
     {
+        
     }
 }

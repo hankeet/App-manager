@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="42b9ca1db43c4f879089e9cc39053ce6" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="JianZhiModel.GongZuo" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.HaoYouXinXi" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.KeCheng" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.ShangJiaGuangGao" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.ShangJiaJiaoYiJiLu" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.ShangJiaXinXi" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.ShangJiaZhaoPin" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.ShouCangGongZuo" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.ShouCangShangJia" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.XueShengJiaoYiJiLu" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.XueShengQiuZhi" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.XueShengXinXi" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JianZhiModel.XueShengZhaoPin" Width="1.5" PointX="3" PointY="26.875" IsExpanded="true" />
+        <AssociationConnector Association="JianZhiModel.fk_gongzuoqiuzhi" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_shangjiagongzuozhaopin" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshenggongzuozhaopin" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshengshoucanggongzuo" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_zuduigongzuo" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_haoyou" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshengkecheng" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_shangjiaguanggao" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_shangjiajiaoyijilu" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_shangjiaqiuzhi" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshengshoucangshangjia" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshengshoucangz" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshengshoucangs" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshengjiaoyijilu" ManuallyRouted="false" />
+        <AssociationConnector Association="JianZhiModel.fk_xueshengqiuzhi" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

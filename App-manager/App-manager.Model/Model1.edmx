@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JianZhiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GongZuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="shangjialeixing" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="qiuzhi" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="shijian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HaoYouXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueshengid" Type="int" Nullable="false" />
+          <Property Name="liaotian" Type="text" />
+          <Property Name="jiaoyoushijian" Type="datetime" Nullable="false" />
+          <Property Name="zuduicishu" Type="int" />
+          <Property Name="zuduigongzuo" Type="int" />
+        </EntityType>
+        <EntityType Name="KeCheng">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueshengid" Type="int" Nullable="false" />
+          <Property Name="xuexiao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="xuehao" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xuehaopass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="yi" Type="text" />
+          <Property Name="er" Type="text" />
+          <Property Name="san" Type="text" />
+          <Property Name="si" Type="text" />
+          <Property Name="wu" Type="text" />
+          <Property Name="liu" Type="text" />
+          <Property Name="qi" Type="text" />
+        </EntityType>
+        <EntityType Name="ShangJiaGuangGao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sahngjianame" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="shangjiaid" Type="int" Nullable="false" />
+          <Property Name="neirong" Type="text" />
+          <Property Name="tupian" Type="image" />
+        </EntityType>
+        <EntityType Name="ShangJiaJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="shangjiaid" Type="int" Nullable="false" />
+          <Property Name="jilu" Type="text" />
+          <Property Name="wancheng" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="pingjia" Type="text" />
+          <Property Name="wanchengjiaoyishijian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ShangJiaXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongsi" Type="varchar" MaxLength="30" />
+          <Property Name="fuzeren" Type="varchar" MaxLength="30" />
+          <Property Name="zhengjianhao" Type="varchar" MaxLength="18" />
+          <Property Name="head_image" Type="image" />
+          <Property Name="phone" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xukezheng" Type="image" />
+          <Property Name="huiyuan" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="dizhi" Type="varchar" MaxLength="100" />
+          <Property Name="tongguo" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="leixing" Type="varchar" MaxLength="200" />
+          <Property Name="zaopincishu" Type="int" Nullable="false" />
+          <Property Name="xingyong" Type="int" Nullable="false" />
+          <Property Name="qq" Type="varchar" MaxLength="20" />
+          <Property Name="weixin" Type="varchar" MaxLength="20" />
+          <Property Name="day_login" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShangJiaZhaoPin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongzuoid" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="yaoqiu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="neirong" Type="text" Nullable="false" />
+          <Property Name="xiangqing" Type="text" Nullable="false" />
+          <Property Name="fabushijian" Type="datetime" />
+          <Property Name="yingpinqingkuang" Type="text" />
+          <Property Name="luyongqingkuang" Type="text" />
+          <Property Name="chengliqingkuang" Type="text" />
+          <Property Name="zhaoman" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShouCangGongZuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueshengid" Type="int" Nullable="false" />
+          <Property Name="gongzuoid" Type="int" Nullable="false" />
+          <Property Name="shijian" Type="datetime" Nullable="false" />
+          <Property Name="shixiao" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="ShouCangShangJia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueshengid" Type="int" Nullable="false" />
+          <Property Name="shangjiaid" Type="int" Nullable="false" />
+          <Property Name="shijian" Type="datetime" Nullable="false" />
+          <Property Name="shixiao" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="XueShengJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xueshengid" Type="int" Nullable="false" />
+          <Property Name="jilu" Type="text" />
+          <Property Name="wancheng" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="pingjia" Type="text" />
+          <Property Name="wanchengjiaoyishijian" Type="datetime" />
+          <Property Name="kejian" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="XueShengQiuZhi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongzuoid" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="titie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="xinxi" Type="text" Nullable="false" />
+          <Property Name="fabushijian" Type="datetime" Nullable="false" />
+          <Property Name="xueshengid" Type="int" Nullable="false" />
+          <Property Name="shangjiaid" Type="int" Nullable="false" />
+          <Property Name="zhongyishangjia" Type="text" />
+          <Property Name="xuanze商家" Type="text" />
+          <Property Name="chenglishijian" Type="datetime" />
+        </EntityType>
+        <EntityType Name="XueShengXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" />
+          <Property Name="head_image" Type="image" />
+          <Property Name="phone" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="huiyuan" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="dizhi" Type="varchar" MaxLength="100" />
+          <Property Name="chushengriqi" Type="datetime" />
+          <Property Name="leixing" Type="varchar" MaxLength="200" />
+          <Property Name="shoucangshangjia" Type="text" />
+          <Property Name="收藏gongzuo" Type="text" />
+          <Property Name="cishu" Type="int" />
+          <Property Name="xingyong" Type="int" Nullable="false" />
+          <Property Name="shangjia" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="qq" Type="varchar" MaxLength="20" />
+          <Property Name="weixin" Type="varchar" MaxLength="20" />
+          <Property Name="day_login" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="XueShengZhaoPin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gongzuoid" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="yaoqiu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="neirong" Type="text" Nullable="false" />
+          <Property Name="xiangqing" Type="text" Nullable="false" />
+          <Property Name="fabushijian" Type="datetime" />
+          <Property Name="yingpinqingkuang" Type="text" />
+          <Property Name="luyongqingkuang" Type="text" />
+          <Property Name="chengliqingkuang" Type="text" />
+          <Property Name="zhaoman" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_gongzuoqiuzhi">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="XueShengQiuZhi" Type="Self.XueShengQiuZhi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengQiuZhi">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_haoyou">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="HaoYouXinXi" Type="Self.HaoYouXinXi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HaoYouXinXi">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiagongzuozhaopin">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="ShangJiaZhaoPin" Type="Self.ShangJiaZhaoPin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShangJiaZhaoPin">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiaguanggao">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="ShangJiaGuangGao" Type="Self.ShangJiaGuangGao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShangJiaGuangGao">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiajiaoyijilu">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="ShangJiaJiaoYiJiLu" Type="Self.ShangJiaJiaoYiJiLu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShangJiaJiaoYiJiLu">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiaqiuzhi">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="XueShengQiuZhi" Type="Self.XueShengQiuZhi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengQiuZhi">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshenggongzuozhaopin">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="XueShengZhaoPin" Type="Self.XueShengZhaoPin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengZhaoPin">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengjiaoyijilu">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="XueShengJiaoYiJiLu" Type="Self.XueShengJiaoYiJiLu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengJiaoYiJiLu">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengkecheng">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="KeCheng" Type="Self.KeCheng" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="KeCheng">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengqiuzhi">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="XueShengQiuZhi" Type="Self.XueShengQiuZhi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengQiuZhi">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucanggongzuo">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="ShouCangGongZuo" Type="Self.ShouCangGongZuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangGongZuo">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucangs">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="ShouCangShangJia" Type="Self.ShouCangShangJia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangShangJia">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucangshangjia">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="ShouCangShangJia" Type="Self.ShouCangShangJia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangShangJia">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucangz">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="ShouCangGongZuo" Type="Self.ShouCangGongZuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangGongZuo">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_zuduigongzuo">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="0..1" />
+          <End Role="HaoYouXinXi" Type="Self.HaoYouXinXi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HaoYouXinXi">
+              <PropertyRef Name="zuduigongzuo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JianZhiModelStoreContainer">
+          <EntitySet Name="GongZuo" EntityType="Self.GongZuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HaoYouXinXi" EntityType="Self.HaoYouXinXi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KeCheng" EntityType="Self.KeCheng" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShangJiaGuangGao" EntityType="Self.ShangJiaGuangGao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShangJiaJiaoYiJiLu" EntityType="Self.ShangJiaJiaoYiJiLu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShangJiaXinXi" EntityType="Self.ShangJiaXinXi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShangJiaZhaoPin" EntityType="Self.ShangJiaZhaoPin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShouCangGongZuo" EntityType="Self.ShouCangGongZuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShouCangShangJia" EntityType="Self.ShouCangShangJia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengJiaoYiJiLu" EntityType="Self.XueShengJiaoYiJiLu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengQiuZhi" EntityType="Self.XueShengQiuZhi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengXinXi" EntityType="Self.XueShengXinXi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XueShengZhaoPin" EntityType="Self.XueShengZhaoPin" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_gongzuoqiuzhi" Association="Self.fk_gongzuoqiuzhi">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="XueShengQiuZhi" EntitySet="XueShengQiuZhi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_haoyou" Association="Self.fk_haoyou">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="HaoYouXinXi" EntitySet="HaoYouXinXi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiagongzuozhaopin" Association="Self.fk_shangjiagongzuozhaopin">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="ShangJiaZhaoPin" EntitySet="ShangJiaZhaoPin" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiaguanggao" Association="Self.fk_shangjiaguanggao">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="ShangJiaGuangGao" EntitySet="ShangJiaGuangGao" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiajiaoyijilu" Association="Self.fk_shangjiajiaoyijilu">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="ShangJiaJiaoYiJiLu" EntitySet="ShangJiaJiaoYiJiLu" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiaqiuzhi" Association="Self.fk_shangjiaqiuzhi">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="XueShengQiuZhi" EntitySet="XueShengQiuZhi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshenggongzuozhaopin" Association="Self.fk_xueshenggongzuozhaopin">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="XueShengZhaoPin" EntitySet="XueShengZhaoPin" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengjiaoyijilu" Association="Self.fk_xueshengjiaoyijilu">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="XueShengJiaoYiJiLu" EntitySet="XueShengJiaoYiJiLu" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengkecheng" Association="Self.fk_xueshengkecheng">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="KeCheng" EntitySet="KeCheng" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengqiuzhi" Association="Self.fk_xueshengqiuzhi">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="XueShengQiuZhi" EntitySet="XueShengQiuZhi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucanggongzuo" Association="Self.fk_xueshengshoucanggongzuo">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="ShouCangGongZuo" EntitySet="ShouCangGongZuo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucangs" Association="Self.fk_xueshengshoucangs">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="ShouCangShangJia" EntitySet="ShouCangShangJia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucangshangjia" Association="Self.fk_xueshengshoucangshangjia">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="ShouCangShangJia" EntitySet="ShouCangShangJia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucangz" Association="Self.fk_xueshengshoucangz">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="ShouCangGongZuo" EntitySet="ShouCangGongZuo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_zuduigongzuo" Association="Self.fk_zuduigongzuo">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="HaoYouXinXi" EntitySet="HaoYouXinXi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JianZhiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GongZuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="shangjialeixing" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qiuzhi" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="shijian" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="XueShengQiuZhi" Relationship="Self.fk_gongzuoqiuzhi" FromRole="GongZuo" ToRole="XueShengQiuZhi" />
+          <NavigationProperty Name="ShangJiaZhaoPin" Relationship="Self.fk_shangjiagongzuozhaopin" FromRole="GongZuo" ToRole="ShangJiaZhaoPin" />
+          <NavigationProperty Name="XueShengZhaoPin" Relationship="Self.fk_xueshenggongzuozhaopin" FromRole="GongZuo" ToRole="XueShengZhaoPin" />
+          <NavigationProperty Name="ShouCangGongZuo" Relationship="Self.fk_xueshengshoucanggongzuo" FromRole="GongZuo" ToRole="ShouCangGongZuo" />
+          <NavigationProperty Name="HaoYouXinXi" Relationship="Self.fk_zuduigongzuo" FromRole="GongZuo" ToRole="HaoYouXinXi" />
+        </EntityType>
+        <EntityType Name="HaoYouXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xueshengid" Type="Int32" Nullable="false" />
+          <Property Name="liaotian" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="jiaoyoushijian" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="zuduicishu" Type="Int32" />
+          <Property Name="zuduigongzuo" Type="Int32" />
+          <NavigationProperty Name="GongZuo" Relationship="Self.fk_zuduigongzuo" FromRole="HaoYouXinXi" ToRole="GongZuo" />
+          <NavigationProperty Name="XueShengXinXi" Relationship="Self.fk_haoyou" FromRole="HaoYouXinXi" ToRole="XueShengXinXi" />
+        </EntityType>
+        <EntityType Name="KeCheng">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xueshengid" Type="Int32" Nullable="false" />
+          <Property Name="xuexiao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xuehao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xuehaopass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="er" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="san" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="si" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="liu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="qi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="XueShengXinXi" Relationship="Self.fk_xueshengkecheng" FromRole="KeCheng" ToRole="XueShengXinXi" />
+        </EntityType>
+        <EntityType Name="ShangJiaGuangGao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sahngjianame" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="shangjiaid" Type="Int32" Nullable="false" />
+          <Property Name="neirong" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="tupian" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="ShangJiaXinXi" Relationship="Self.fk_shangjiaguanggao" FromRole="ShangJiaGuangGao" ToRole="ShangJiaXinXi" />
+        </EntityType>
+        <EntityType Name="ShangJiaJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="shangjiaid" Type="Int32" Nullable="false" />
+          <Property Name="jilu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wancheng" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pingjia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wanchengjiaoyishijian" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ShangJiaXinXi" Relationship="Self.fk_shangjiajiaoyijilu" FromRole="ShangJiaJiaoYiJiLu" ToRole="ShangJiaXinXi" />
+        </EntityType>
+        <EntityType Name="ShangJiaXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongsi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="fuzeren" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="zhengjianhao" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="head_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xukezheng" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="huiyuan" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dizhi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tongguo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leixing" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="zaopincishu" Type="Int32" Nullable="false" />
+          <Property Name="xingyong" Type="Int32" Nullable="false" />
+          <Property Name="qq" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="weixin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="day_login" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ShangJiaGuangGao" Relationship="Self.fk_shangjiaguanggao" FromRole="ShangJiaXinXi" ToRole="ShangJiaGuangGao" />
+          <NavigationProperty Name="ShangJiaJiaoYiJiLu" Relationship="Self.fk_shangjiajiaoyijilu" FromRole="ShangJiaXinXi" ToRole="ShangJiaJiaoYiJiLu" />
+          <NavigationProperty Name="XueShengQiuZhi" Relationship="Self.fk_shangjiaqiuzhi" FromRole="ShangJiaXinXi" ToRole="XueShengQiuZhi" />
+          <NavigationProperty Name="ShouCangShangJia" Relationship="Self.fk_xueshengshoucangshangjia" FromRole="ShangJiaXinXi" ToRole="ShouCangShangJia" />
+        </EntityType>
+        <EntityType Name="ShangJiaZhaoPin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongzuoid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yaoqiu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="neirong" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xiangqing" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fabushijian" Type="DateTime" Precision="3" />
+          <Property Name="yingpinqingkuang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="luyongqingkuang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chengliqingkuang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zhaoman" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="GongZuo" Relationship="Self.fk_shangjiagongzuozhaopin" FromRole="ShangJiaZhaoPin" ToRole="GongZuo" />
+        </EntityType>
+        <EntityType Name="ShouCangGongZuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xueshengid" Type="Int32" Nullable="false" />
+          <Property Name="gongzuoid" Type="Int32" Nullable="false" />
+          <Property Name="shijian" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="shixiao" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GongZuo" Relationship="Self.fk_xueshengshoucanggongzuo" FromRole="ShouCangGongZuo" ToRole="GongZuo" />
+          <NavigationProperty Name="XueShengXinXi" Relationship="Self.fk_xueshengshoucangz" FromRole="ShouCangGongZuo" ToRole="XueShengXinXi" />
+        </EntityType>
+        <EntityType Name="ShouCangShangJia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xueshengid" Type="Int32" Nullable="false" />
+          <Property Name="shangjiaid" Type="Int32" Nullable="false" />
+          <Property Name="shijian" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="shixiao" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ShangJiaXinXi" Relationship="Self.fk_xueshengshoucangshangjia" FromRole="ShouCangShangJia" ToRole="ShangJiaXinXi" />
+          <NavigationProperty Name="XueShengXinXi" Relationship="Self.fk_xueshengshoucangs" FromRole="ShouCangShangJia" ToRole="XueShengXinXi" />
+        </EntityType>
+        <EntityType Name="XueShengJiaoYiJiLu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xueshengid" Type="Int32" Nullable="false" />
+          <Property Name="jilu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wancheng" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pingjia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="wanchengjiaoyishijian" Type="DateTime" Precision="3" />
+          <Property Name="kejian" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="XueShengXinXi" Relationship="Self.fk_xueshengjiaoyijilu" FromRole="XueShengJiaoYiJiLu" ToRole="XueShengXinXi" />
+        </EntityType>
+        <EntityType Name="XueShengQiuZhi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongzuoid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="titie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xinxi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fabushijian" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xueshengid" Type="Int32" Nullable="false" />
+          <Property Name="shangjiaid" Type="Int32" Nullable="false" />
+          <Property Name="zhongyishangjia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="xuanze商家" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chenglishijian" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GongZuo" Relationship="Self.fk_gongzuoqiuzhi" FromRole="XueShengQiuZhi" ToRole="GongZuo" />
+          <NavigationProperty Name="ShangJiaXinXi" Relationship="Self.fk_shangjiaqiuzhi" FromRole="XueShengQiuZhi" ToRole="ShangJiaXinXi" />
+          <NavigationProperty Name="XueShengXinXi" Relationship="Self.fk_xueshengqiuzhi" FromRole="XueShengQiuZhi" ToRole="XueShengXinXi" />
+        </EntityType>
+        <EntityType Name="XueShengXinXi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="head_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="huiyuan" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dizhi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="chushengriqi" Type="DateTime" Precision="3" />
+          <Property Name="leixing" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="shoucangshangjia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="收藏gongzuo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cishu" Type="Int32" />
+          <Property Name="xingyong" Type="Int32" Nullable="false" />
+          <Property Name="shangjia" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qq" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="weixin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="day_login" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="HaoYouXinXi" Relationship="Self.fk_haoyou" FromRole="XueShengXinXi" ToRole="HaoYouXinXi" />
+          <NavigationProperty Name="KeCheng" Relationship="Self.fk_xueshengkecheng" FromRole="XueShengXinXi" ToRole="KeCheng" />
+          <NavigationProperty Name="ShouCangGongZuo" Relationship="Self.fk_xueshengshoucangz" FromRole="XueShengXinXi" ToRole="ShouCangGongZuo" />
+          <NavigationProperty Name="ShouCangShangJia1" Relationship="Self.fk_xueshengshoucangs" FromRole="XueShengXinXi" ToRole="ShouCangShangJia" />
+          <NavigationProperty Name="XueShengJiaoYiJiLu" Relationship="Self.fk_xueshengjiaoyijilu" FromRole="XueShengXinXi" ToRole="XueShengJiaoYiJiLu" />
+          <NavigationProperty Name="XueShengQiuZhi" Relationship="Self.fk_xueshengqiuzhi" FromRole="XueShengXinXi" ToRole="XueShengQiuZhi" />
+        </EntityType>
+        <EntityType Name="XueShengZhaoPin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gongzuoid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="yaoqiu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="neirong" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xiangqing" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fabushijian" Type="DateTime" Precision="3" />
+          <Property Name="yingpinqingkuang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="luyongqingkuang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chengliqingkuang" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zhaoman" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="GongZuo" Relationship="Self.fk_xueshenggongzuozhaopin" FromRole="XueShengZhaoPin" ToRole="GongZuo" />
+        </EntityType>
+        <Association Name="fk_gongzuoqiuzhi">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="XueShengQiuZhi" Type="Self.XueShengQiuZhi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengQiuZhi">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiagongzuozhaopin">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="ShangJiaZhaoPin" Type="Self.ShangJiaZhaoPin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShangJiaZhaoPin">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshenggongzuozhaopin">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="XueShengZhaoPin" Type="Self.XueShengZhaoPin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengZhaoPin">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucanggongzuo">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="1" />
+          <End Role="ShouCangGongZuo" Type="Self.ShouCangGongZuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangGongZuo">
+              <PropertyRef Name="gongzuoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_zuduigongzuo">
+          <End Role="GongZuo" Type="Self.GongZuo" Multiplicity="0..1" />
+          <End Role="HaoYouXinXi" Type="Self.HaoYouXinXi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GongZuo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HaoYouXinXi">
+              <PropertyRef Name="zuduigongzuo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_haoyou">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="HaoYouXinXi" Type="Self.HaoYouXinXi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HaoYouXinXi">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengkecheng">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="KeCheng" Type="Self.KeCheng" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="KeCheng">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiaguanggao">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="ShangJiaGuangGao" Type="Self.ShangJiaGuangGao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShangJiaGuangGao">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiajiaoyijilu">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="ShangJiaJiaoYiJiLu" Type="Self.ShangJiaJiaoYiJiLu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShangJiaJiaoYiJiLu">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_shangjiaqiuzhi">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="XueShengQiuZhi" Type="Self.XueShengQiuZhi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengQiuZhi">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucangshangjia">
+          <End Role="ShangJiaXinXi" Type="Self.ShangJiaXinXi" Multiplicity="1" />
+          <End Role="ShouCangShangJia" Type="Self.ShouCangShangJia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShangJiaXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangShangJia">
+              <PropertyRef Name="shangjiaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucangz">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="ShouCangGongZuo" Type="Self.ShouCangGongZuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangGongZuo">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengshoucangs">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="ShouCangShangJia" Type="Self.ShouCangShangJia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ShouCangShangJia">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengjiaoyijilu">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="XueShengJiaoYiJiLu" Type="Self.XueShengJiaoYiJiLu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengJiaoYiJiLu">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_xueshengqiuzhi">
+          <End Role="XueShengXinXi" Type="Self.XueShengXinXi" Multiplicity="1" />
+          <End Role="XueShengQiuZhi" Type="Self.XueShengQiuZhi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XueShengXinXi">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="XueShengQiuZhi">
+              <PropertyRef Name="xueshengid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JianZhiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GongZuo" EntityType="Self.GongZuo" />
+          <EntitySet Name="HaoYouXinXi" EntityType="Self.HaoYouXinXi" />
+          <EntitySet Name="KeCheng" EntityType="Self.KeCheng" />
+          <EntitySet Name="ShangJiaGuangGao" EntityType="Self.ShangJiaGuangGao" />
+          <EntitySet Name="ShangJiaJiaoYiJiLu" EntityType="Self.ShangJiaJiaoYiJiLu" />
+          <EntitySet Name="ShangJiaXinXi" EntityType="Self.ShangJiaXinXi" />
+          <EntitySet Name="ShangJiaZhaoPin" EntityType="Self.ShangJiaZhaoPin" />
+          <EntitySet Name="ShouCangGongZuo" EntityType="Self.ShouCangGongZuo" />
+          <EntitySet Name="ShouCangShangJia" EntityType="Self.ShouCangShangJia" />
+          <EntitySet Name="XueShengJiaoYiJiLu" EntityType="Self.XueShengJiaoYiJiLu" />
+          <EntitySet Name="XueShengQiuZhi" EntityType="Self.XueShengQiuZhi" />
+          <EntitySet Name="XueShengXinXi" EntityType="Self.XueShengXinXi" />
+          <EntitySet Name="XueShengZhaoPin" EntityType="Self.XueShengZhaoPin" />
+          <AssociationSet Name="fk_gongzuoqiuzhi" Association="Self.fk_gongzuoqiuzhi">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="XueShengQiuZhi" EntitySet="XueShengQiuZhi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiagongzuozhaopin" Association="Self.fk_shangjiagongzuozhaopin">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="ShangJiaZhaoPin" EntitySet="ShangJiaZhaoPin" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshenggongzuozhaopin" Association="Self.fk_xueshenggongzuozhaopin">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="XueShengZhaoPin" EntitySet="XueShengZhaoPin" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucanggongzuo" Association="Self.fk_xueshengshoucanggongzuo">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="ShouCangGongZuo" EntitySet="ShouCangGongZuo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_zuduigongzuo" Association="Self.fk_zuduigongzuo">
+            <End Role="GongZuo" EntitySet="GongZuo" />
+            <End Role="HaoYouXinXi" EntitySet="HaoYouXinXi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_haoyou" Association="Self.fk_haoyou">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="HaoYouXinXi" EntitySet="HaoYouXinXi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengkecheng" Association="Self.fk_xueshengkecheng">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="KeCheng" EntitySet="KeCheng" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiaguanggao" Association="Self.fk_shangjiaguanggao">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="ShangJiaGuangGao" EntitySet="ShangJiaGuangGao" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiajiaoyijilu" Association="Self.fk_shangjiajiaoyijilu">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="ShangJiaJiaoYiJiLu" EntitySet="ShangJiaJiaoYiJiLu" />
+          </AssociationSet>
+          <AssociationSet Name="fk_shangjiaqiuzhi" Association="Self.fk_shangjiaqiuzhi">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="XueShengQiuZhi" EntitySet="XueShengQiuZhi" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucangshangjia" Association="Self.fk_xueshengshoucangshangjia">
+            <End Role="ShangJiaXinXi" EntitySet="ShangJiaXinXi" />
+            <End Role="ShouCangShangJia" EntitySet="ShouCangShangJia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucangz" Association="Self.fk_xueshengshoucangz">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="ShouCangGongZuo" EntitySet="ShouCangGongZuo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengshoucangs" Association="Self.fk_xueshengshoucangs">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="ShouCangShangJia" EntitySet="ShouCangShangJia" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengjiaoyijilu" Association="Self.fk_xueshengjiaoyijilu">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="XueShengJiaoYiJiLu" EntitySet="XueShengJiaoYiJiLu" />
+          </AssociationSet>
+          <AssociationSet Name="fk_xueshengqiuzhi" Association="Self.fk_xueshengqiuzhi">
+            <End Role="XueShengXinXi" EntitySet="XueShengXinXi" />
+            <End Role="XueShengQiuZhi" EntitySet="XueShengQiuZhi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JianZhiModelStoreContainer" CdmEntityContainer="JianZhiEntities">
+          <EntitySetMapping Name="GongZuo">
+            <EntityTypeMapping TypeName="JianZhiModel.GongZuo">
+              <MappingFragment StoreEntitySet="GongZuo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="shangjialeixing" ColumnName="shangjialeixing" />
+                <ScalarProperty Name="qiuzhi" ColumnName="qiuzhi" />
+                <ScalarProperty Name="shijian" ColumnName="shijian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HaoYouXinXi">
+            <EntityTypeMapping TypeName="JianZhiModel.HaoYouXinXi">
+              <MappingFragment StoreEntitySet="HaoYouXinXi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="xueshengid" ColumnName="xueshengid" />
+                <ScalarProperty Name="liaotian" ColumnName="liaotian" />
+                <ScalarProperty Name="jiaoyoushijian" ColumnName="jiaoyoushijian" />
+                <ScalarProperty Name="zuduicishu" ColumnName="zuduicishu" />
+                <ScalarProperty Name="zuduigongzuo" ColumnName="zuduigongzuo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KeCheng">
+            <EntityTypeMapping TypeName="JianZhiModel.KeCheng">
+              <MappingFragment StoreEntitySet="KeCheng">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="xueshengid" ColumnName="xueshengid" />
+                <ScalarProperty Name="xuexiao" ColumnName="xuexiao" />
+                <ScalarProperty Name="xuehao" ColumnName="xuehao" />
+                <ScalarProperty Name="xuehaopass" ColumnName="xuehaopass" />
+                <ScalarProperty Name="yi" ColumnName="yi" />
+                <ScalarProperty Name="er" ColumnName="er" />
+                <ScalarProperty Name="san" ColumnName="san" />
+                <ScalarProperty Name="si" ColumnName="si" />
+                <ScalarProperty Name="wu" ColumnName="wu" />
+                <ScalarProperty Name="liu" ColumnName="liu" />
+                <ScalarProperty Name="qi" ColumnName="qi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShangJiaGuangGao">
+            <EntityTypeMapping TypeName="JianZhiModel.ShangJiaGuangGao">
+              <MappingFragment StoreEntitySet="ShangJiaGuangGao">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sahngjianame" ColumnName="sahngjianame" />
+                <ScalarProperty Name="shangjiaid" ColumnName="shangjiaid" />
+                <ScalarProperty Name="neirong" ColumnName="neirong" />
+                <ScalarProperty Name="tupian" ColumnName="tupian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShangJiaJiaoYiJiLu">
+            <EntityTypeMapping TypeName="JianZhiModel.ShangJiaJiaoYiJiLu">
+              <MappingFragment StoreEntitySet="ShangJiaJiaoYiJiLu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="shangjiaid" ColumnName="shangjiaid" />
+                <ScalarProperty Name="jilu" ColumnName="jilu" />
+                <ScalarProperty Name="wancheng" ColumnName="wancheng" />
+                <ScalarProperty Name="pingjia" ColumnName="pingjia" />
+                <ScalarProperty Name="wanchengjiaoyishijian" ColumnName="wanchengjiaoyishijian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShangJiaXinXi">
+            <EntityTypeMapping TypeName="JianZhiModel.ShangJiaXinXi">
+              <MappingFragment StoreEntitySet="ShangJiaXinXi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="gongsi" ColumnName="gongsi" />
+                <ScalarProperty Name="fuzeren" ColumnName="fuzeren" />
+                <ScalarProperty Name="zhengjianhao" ColumnName="zhengjianhao" />
+                <ScalarProperty Name="head_image" ColumnName="head_image" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="xukezheng" ColumnName="xukezheng" />
+                <ScalarProperty Name="huiyuan" ColumnName="huiyuan" />
+                <ScalarProperty Name="dizhi" ColumnName="dizhi" />
+                <ScalarProperty Name="tongguo" ColumnName="tongguo" />
+                <ScalarProperty Name="leixing" ColumnName="leixing" />
+                <ScalarProperty Name="zaopincishu" ColumnName="zaopincishu" />
+                <ScalarProperty Name="xingyong" ColumnName="xingyong" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="weixin" ColumnName="weixin" />
+                <ScalarProperty Name="day_login" ColumnName="day_login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShangJiaZhaoPin">
+            <EntityTypeMapping TypeName="JianZhiModel.ShangJiaZhaoPin">
+              <MappingFragment StoreEntitySet="ShangJiaZhaoPin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="gongzuoid" ColumnName="gongzuoid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="yaoqiu" ColumnName="yaoqiu" />
+                <ScalarProperty Name="neirong" ColumnName="neirong" />
+                <ScalarProperty Name="xiangqing" ColumnName="xiangqing" />
+                <ScalarProperty Name="fabushijian" ColumnName="fabushijian" />
+                <ScalarProperty Name="yingpinqingkuang" ColumnName="yingpinqingkuang" />
+                <ScalarProperty Name="luyongqingkuang" ColumnName="luyongqingkuang" />
+                <ScalarProperty Name="chengliqingkuang" ColumnName="chengliqingkuang" />
+                <ScalarProperty Name="zhaoman" ColumnName="zhaoman" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShouCangGongZuo">
+            <EntityTypeMapping TypeName="JianZhiModel.ShouCangGongZuo">
+              <MappingFragment StoreEntitySet="ShouCangGongZuo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="xueshengid" ColumnName="xueshengid" />
+                <ScalarProperty Name="gongzuoid" ColumnName="gongzuoid" />
+                <ScalarProperty Name="shijian" ColumnName="shijian" />
+                <ScalarProperty Name="shixiao" ColumnName="shixiao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShouCangShangJia">
+            <EntityTypeMapping TypeName="JianZhiModel.ShouCangShangJia">
+              <MappingFragment StoreEntitySet="ShouCangShangJia">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="xueshengid" ColumnName="xueshengid" />
+                <ScalarProperty Name="shangjiaid" ColumnName="shangjiaid" />
+                <ScalarProperty Name="shijian" ColumnName="shijian" />
+                <ScalarProperty Name="shixiao" ColumnName="shixiao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengJiaoYiJiLu">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengJiaoYiJiLu">
+              <MappingFragment StoreEntitySet="XueShengJiaoYiJiLu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="xueshengid" ColumnName="xueshengid" />
+                <ScalarProperty Name="jilu" ColumnName="jilu" />
+                <ScalarProperty Name="wancheng" ColumnName="wancheng" />
+                <ScalarProperty Name="pingjia" ColumnName="pingjia" />
+                <ScalarProperty Name="wanchengjiaoyishijian" ColumnName="wanchengjiaoyishijian" />
+                <ScalarProperty Name="kejian" ColumnName="kejian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengQiuZhi">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengQiuZhi">
+              <MappingFragment StoreEntitySet="XueShengQiuZhi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="gongzuoid" ColumnName="gongzuoid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="titie" ColumnName="titie" />
+                <ScalarProperty Name="xinxi" ColumnName="xinxi" />
+                <ScalarProperty Name="fabushijian" ColumnName="fabushijian" />
+                <ScalarProperty Name="xueshengid" ColumnName="xueshengid" />
+                <ScalarProperty Name="shangjiaid" ColumnName="shangjiaid" />
+                <ScalarProperty Name="zhongyishangjia" ColumnName="zhongyishangjia" />
+                <ScalarProperty Name="xuanze商家" ColumnName="xuanze商家" />
+                <ScalarProperty Name="chenglishijian" ColumnName="chenglishijian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengXinXi">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengXinXi">
+              <MappingFragment StoreEntitySet="XueShengXinXi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="head_image" ColumnName="head_image" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="huiyuan" ColumnName="huiyuan" />
+                <ScalarProperty Name="dizhi" ColumnName="dizhi" />
+                <ScalarProperty Name="chushengriqi" ColumnName="chushengriqi" />
+                <ScalarProperty Name="leixing" ColumnName="leixing" />
+                <ScalarProperty Name="shoucangshangjia" ColumnName="shoucangshangjia" />
+                <ScalarProperty Name="收藏gongzuo" ColumnName="收藏gongzuo" />
+                <ScalarProperty Name="cishu" ColumnName="cishu" />
+                <ScalarProperty Name="xingyong" ColumnName="xingyong" />
+                <ScalarProperty Name="shangjia" ColumnName="shangjia" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="weixin" ColumnName="weixin" />
+                <ScalarProperty Name="day_login" ColumnName="day_login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XueShengZhaoPin">
+            <EntityTypeMapping TypeName="JianZhiModel.XueShengZhaoPin">
+              <MappingFragment StoreEntitySet="XueShengZhaoPin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="gongzuoid" ColumnName="gongzuoid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="yaoqiu" ColumnName="yaoqiu" />
+                <ScalarProperty Name="neirong" ColumnName="neirong" />
+                <ScalarProperty Name="xiangqing" ColumnName="xiangqing" />
+                <ScalarProperty Name="fabushijian" ColumnName="fabushijian" />
+                <ScalarProperty Name="yingpinqingkuang" ColumnName="yingpinqingkuang" />
+                <ScalarProperty Name="luyongqingkuang" ColumnName="luyongqingkuang" />
+                <ScalarProperty Name="chengliqingkuang" ColumnName="chengliqingkuang" />
+                <ScalarProperty Name="zhaoman" ColumnName="zhaoman" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

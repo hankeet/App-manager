@@ -286,6 +286,28 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App-manager.BLL\App-manager.BLL.csproj">
+      <Project>{E0DD33F0-FBE4-44DA-84B0-3E1023E78B39}</Project>
+      <Name>App-manager.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App-manager.DAO\App-manager.DAO.csproj">
+      <Project>{0FC5BD74-F0D9-4BCB-8831-AC280C994078}</Project>
+      <Name>App-manager.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App-manager.IBLL\App-manager.IBLL.csproj">
+      <Project>{CB2DA00A-F584-47C3-BA93-518CABB1506E}</Project>
+      <Name>App-manager.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App-manager.IDAO\App-manager.IDAO.csproj">
+      <Project>{6F4B3E4F-D0AE-42F2-9D61-493BE042FB5C}</Project>
+      <Name>App-manager.IDAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App-manager.Model\App-manager.Model.csproj">
+      <Project>{b3892569-c6a1-4680-a41d-797affff3da8}</Project>
+      <Name>App-manager.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

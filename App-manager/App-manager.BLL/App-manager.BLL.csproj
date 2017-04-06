@@ -53,6 +53,10 @@
       <Project>{0FC5BD74-F0D9-4BCB-8831-AC280C994078}</Project>
       <Name>App-manager.DAO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App-manager.IBLL\App-manager.IBLL.csproj">
+      <Project>{CB2DA00A-F584-47C3-BA93-518CABB1506E}</Project>
+      <Name>App-manager.IBLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App-manager.IDAO\App-manager.IDAO.csproj">
       <Project>{6F4B3E4F-D0AE-42F2-9D61-493BE042FB5C}</Project>
       <Name>App-manager.IDAO</Name>
@@ -61,6 +65,9 @@
       <Project>{B3892569-C6A1-4680-A41D-797AFFFF3DA8}</Project>
       <Name>App-manager.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

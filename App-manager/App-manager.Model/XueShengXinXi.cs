@@ -37,11 +37,11 @@ namespace App_manager.Model
         public string shoucangshangjia { get; set; }
         public string 收藏gongzuo { get; set; }
         public Nullable<int> cishu { get; set; }
-        public int xingyong { get; set; }
+        public Nullable<int> xingyong { get; set; }
         public string shangjia { get; set; }
         public string qq { get; set; }
         public string weixin { get; set; }
-        public System.DateTime day_login { get; set; }
+        public Nullable<System.DateTime> day_login { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HaoYouXinXi> HaoYouXinXi { get; set; }
